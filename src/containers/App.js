@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import CardList from '../components/Cardlist'
 import SearchBox from '../components/SearchBox'
 import Scroll from '../components/scroll'
+import ErrorBoundry from '../components/ErrorBoundry'
 import './App.css'
 
 
@@ -30,9 +31,9 @@ render () {
   const filterRobots = robots.filter(robot => {
     return robot.name.toLowerCase().includes(searchField.toLowerCase())
   })
-  return !robots.length) ?
+  return !robots.length ?
     <h1>Loading...</h1> :
-    return (
+   (
       <div className='tc'>
         <h1 className="f1">RoboFriends</h1>
         <SearchBox searchChange={this.onSearchChange} />
